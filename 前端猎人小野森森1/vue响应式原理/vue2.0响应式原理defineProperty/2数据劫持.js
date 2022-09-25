@@ -2,9 +2,12 @@ function defineProperty() {
     const _obj = {};
     let a = 1;
 
-    // 每个属性被定义的时候，都会有getter和setter方法
+    // 每个属性被定义的时候，都会有get和set方法
     Object.defineProperties(_obj, {
         a: {
+            // value:1
+            // writable:true
+            // value 和 writable 与 get 和 set 互斥
             get() {
                 return '"a"\'s value is ' + a + '.';
             },
@@ -14,9 +17,6 @@ function defineProperty() {
                 oP.innerHTML = a;
             }
         },
-        b: {
-
-        }
     })
     return _obj;
 }
