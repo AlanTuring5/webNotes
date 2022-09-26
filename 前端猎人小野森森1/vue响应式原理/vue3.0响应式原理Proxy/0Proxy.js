@@ -20,3 +20,27 @@ const proxy = new Proxy(target, {
 console.log(proxy.a);
 console.log(target.a);
 proxy.b = 3;
+
+
+
+
+// Proxy 源码框架
+const proxy = new Proxy(target, {
+    get(target, key, reciever) {
+
+    },
+    set(target, key, value, reciever) {
+
+    }
+})
+
+// defineProperty 源码框架
+const _obj = {}
+Object.defineProperty(_obj, {
+    get() {
+
+    },
+    set() {
+
+    }
+})
