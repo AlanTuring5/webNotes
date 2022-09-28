@@ -47,6 +47,59 @@ const _chilNodes = el.parentNode;
 
 
 
+# 生成元素
+
+## createElement
+
+```JS
+const el = document.createElement('div');
+```
+
+
+
+# 生成注释
+
+## createComment
+
+```JS
+comment = document.createComment(`v-if`);
+```
+
+
+
+# 生成文本内容
+
+## createTextNode
+
+```js
+document.createTextNode(c);
+```
+
+
+
+# 替换子节点
+
+## replaceChild
+
+```JS
+//创建注释标签
+v.comment = document.createComment(`v-if`);
+//找到子节点k的父节点，将子节点替换成标签
+k.parentNode.replaceChild(v.comment, k);
+```
+
+
+
+# 添加子节点
+
+## appendChild
+
+```JS
+el.appendChild(c);
+```
+
+
+
 
 
 # 属性
@@ -60,11 +113,19 @@ const _chilNodes = el.parentNode;
 
 
 
-## getAttribute
+## Attribute
+
+- `elem.hasAttribute(name)` —— 检查特性是否存在。
+- `elem.getAttribute(name)` —— 获取这个特性值。
+- `elem.setAttribute(name, value)` —— 设置这个特性值。
+- `elem.removeAttribute(name)` —— 移除这个特性。
+
+
+
+### getAttribute
 
 ```js
 <div class="box box1" v-if="boxShow1">box1</div>
-
 const vIf = dom.getAttribute('v-if'); //vIF = boxShow1
 ```
 
@@ -87,29 +148,6 @@ const vIf = dom.getAttribute('v-if'); //vIF = boxShow1
 ## innerHTML+=
 
 将标签整个替换
-
-
-
-# 注释
-
-## createComment
-
-```JS
-comment = document.createComment(`v-if`);
-```
-
-
-
-# 替换子节点
-
-```JS
-//创建注释标签
-v.comment = document.createComment(`v-if`);
-//找到子节点k的父节点，将子节点替换成标签
-k.parentNode.replaceChild(v.comment, k);
-```
-
-
 
 
 
