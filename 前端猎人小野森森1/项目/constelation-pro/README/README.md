@@ -58,3 +58,47 @@ module.exports = defineConfig({
 yarn add -S axios qs
 ```
 
+
+
+4、结构
+
+assets 资源
+
+- css
+- img
+- js
+
+components 组件
+
+- common
+
+config 配置
+
+- keys.js
+
+data 存放数据
+
+- nav.js
+- tab.js
+
+libs 工具类
+
+- https.js
+
+router 路由
+
+- index.js
+
+servies 请求
+
+- index.js
+- request.js
+
+store 全局变量
+
+- index.js
+
+views 页面
+
+- 
+
