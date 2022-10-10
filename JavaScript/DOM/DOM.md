@@ -173,7 +173,10 @@ el.addEventListener('click', event.bind(this), false);
 ## style
 
 ```JS
-//隐藏节点，样式中增加 display:none
+//1、样式中增加 display:none
 el.style.display = 'none'
+
+//2、样式中增加
+el.style.cssText = 'width:300px;height:300px;background-color:orange'
 ```
 
