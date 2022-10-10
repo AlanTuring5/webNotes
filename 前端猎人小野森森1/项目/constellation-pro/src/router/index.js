@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import TodayPage from '@views/Today';
+import TodayPage from '@/views/Today.vue';
 
 const routes = [
   {
@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/week',
     name: 'week',
-    component: () => import('../views/week.vue'),
+    component: () => import('../views/Week.vue'),
   },
   {
     path: '/month',
