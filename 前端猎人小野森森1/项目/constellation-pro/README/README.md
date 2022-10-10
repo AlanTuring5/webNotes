@@ -97,5 +97,9 @@ store 全局变量
 
 views 页面
 
-- 
+
+
+5、axios请求
+
+
 

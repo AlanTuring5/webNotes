@@ -4,5 +4,11 @@ export default {
     },
     setField(state, newField) {
         state.field = newField
+    },
+    setErrorCode(state, errorCode) {
+        state.errorCode = errorCode
+    },
+    setData(state, data) {
+        state[state.field] = data
     }
 }
