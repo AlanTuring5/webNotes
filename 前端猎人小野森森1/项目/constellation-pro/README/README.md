@@ -1,4 +1,6 @@
-1、创建项目
+# 1、项目搭建
+
+## 创建项目
 
 ```VUE
 npm install -g @vue/cli
@@ -16,7 +18,7 @@ vue add vue-next
 
 
 
-2、配置跨域
+## 配置跨域
 
 ```vue.config.js
 const { defineConfig } = require('@vue/cli-service')
@@ -49,15 +51,7 @@ module.exports = defineConfig({
 
 
 
-3、安装
-
-```
-yarn add -S axios qs
-```
-
-
-
-4、结构
+## 结构分析与划分
 
 assets 资源
 
@@ -68,19 +62,23 @@ assets 资源
 components 组件
 
 - common
+- header
+- tab
 
 config 配置
 
 - keys.js
 
-data 存放数据
+data 存放页面公共静态数据
 
 - nav.js
 - tab.js
+- error.js
 
 libs 工具类
 
 - https.js
+- utils.js
 
 router 路由
 
@@ -99,7 +97,45 @@ views 页面
 
 
 
-5、axios请求
+# 2、数据请求与接口请求的封装
+
+## 安装
+
+```
+yarn add -S axios qs
+```
 
 
+
+# 3、vuex数据存储
+
+
+
+
+
+# 4、路由切换
+
+> 实现效果：点击底部菜单栏，跳转不同的页面，点击时样式发生改变
+
+在底部tab组件内，使用router-link
+
+```
+<router-link :to="path" class="tab-icon">
+    <i class="icon">{{iconText}}</i>
+    <p><slot></slot></p>
+</router-link>
+```
+
+router-link被点击时会新增.router-link-active的class，用于编写点击时的样式
+
+```CSS
+.router-link-active {
+    i {
+        background-color:$activeColor;
+    }
+    p {
+        color:$activeColor
+    }
+}
+```
 

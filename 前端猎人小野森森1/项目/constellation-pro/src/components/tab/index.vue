@@ -37,9 +37,5 @@ export default {
     .tab-item{
         width: 20%;
     }
-
-    .activeTab{
-
-    }
 }
 </style>
