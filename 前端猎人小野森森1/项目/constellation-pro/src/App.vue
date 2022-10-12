@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <my-header>星座物语</my-header>
-    <router-view></router-view>
+    <nav-bar></nav-bar>
+    <router-view v-slot="{ Component }">
+        <keep-alive>
+            <component :is="Component" />
+        </keep-alive>
+    </router-view>
     <tab></tab>
   </div>
 </template>
@@ -9,13 +14,14 @@
 <script>
 import MyHeader from '@/components/header'
 import Tab from '@/components/tab'
+import NavBar from '@/components/NavBar/index.vue'
 import {useStore} from 'vuex';
 import {watch} from 'vue';
 import {useRouter} from 'vue-router'
 
 export default{
     name:'App',
-    components:{MyHeader,Tab},
+    components: { MyHeader, Tab, NavBar },
     setup(){
         const store  = useStore(),
             state = store.state,

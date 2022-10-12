@@ -139,3 +139,15 @@ router-link被点击时会新增.router-link-active的class，用于编写点击
 }
 ```
 
+
+
+# 5、组件缓存
+
+```
+<router-view v-slot="{ Component }">
+    <keep-alive>
+    	<component :is="Component" />
+    </keep-alive>
+</router-view>
+```
+
