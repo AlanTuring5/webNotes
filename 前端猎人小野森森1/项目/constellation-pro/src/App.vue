@@ -2,6 +2,7 @@
   <div id="app">
     <my-header>星座物语</my-header>
     <nav-bar></nav-bar>
+    <cons-card></cons-card>
     <router-view v-slot="{ Component }">
         <keep-alive>
             <component :is="Component" />
@@ -15,6 +16,7 @@
 import MyHeader from '@/components/header'
 import Tab from '@/components/tab'
 import NavBar from '@/components/NavBar/index.vue'
+import ConsCard from '@/components/Common/Card.vue'
 import {useStore} from 'vuex';
 import {watch} from 'vue';
 import {useRouter} from 'vue-router';
@@ -22,7 +24,7 @@ import {ref} from 'vue';
 
 export default{
     name:'App',
-    components: { MyHeader, Tab, NavBar },
+    components: { MyHeader, Tab, NavBar, ConsCard },
     setup(){
         const store  = useStore(),
             state = store.state,

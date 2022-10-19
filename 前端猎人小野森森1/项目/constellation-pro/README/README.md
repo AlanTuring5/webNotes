@@ -219,7 +219,7 @@ export default {
 
 3、父组件
 
-- 父节点使用自定义指令
+- 父节点使用自定义指令v-nav-current
 
 - 将index通过props传输给子组件
 
@@ -230,6 +230,16 @@ export default {
     curIdx,
   }"
 @click="navClick($event)">
+
+
+<script>
+import {navCurrent} from '@/directives'
+export default{
+	directives:{
+        navCurrent,
+    },
+}
+</script>
 ```
 
 

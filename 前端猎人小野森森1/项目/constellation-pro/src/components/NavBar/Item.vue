@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav-item{
-    padding: 10px;
+    padding: 10px 15px;
 }
 .nav-current{
     color:#DD8095;
