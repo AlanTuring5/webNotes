@@ -1,8 +1,14 @@
 <template>
-  <div class="nav-bar">
+  <div class="nav-bar" v-nav-current="{
+    className:'nav-item',
+    activeClass:'nav-current',
+    curIdx,
+  }"
+  @click="navClick($event)">
     <div class="scrow-wrapper">
         <div class="nav-wrapper" :style="`width:${navData.length*68}px`">
-            <nav-item v-for="(item,index) of navData" :key="index" :item="item" :curIdx="curIdx" :index="index" @navClick="navClick"></nav-item>
+            <!-- <nav-item v-for="(item,index) of navData" :key="index" :item="item" :curIdx="curIdx" :index="index" @navClick="navClick"></nav-item> -->
+            <nav-item v-for="(item,index) of navData" :key="index" :item="item" :index="index"></nav-item>
         </div>
     </div>
   </div>
@@ -12,14 +18,24 @@
 import navData from '@/datas/nav'
 import NavItem from './Item.vue'
 import {ref} from 'vue'
+import {navCurrent} from '@/directives'
 
 export default {
     name:'NavBar',
     components: { NavItem },
+    directives:{
+        navCurrent,
+    },
     setup(){
         const curIdx = ref(0);
-        const navClick = (index) => {
-            curIdx.value = index;
+        // const navClick = (index) => {
+        //     curIdx.value = index;
+        // }
+
+        const navClick = (e)=>{
+            // console.log(e);
+            const idx = e.target.dataset.index;
+            curIdx.value = idx;
         }
 
         return {

@@ -177,3 +177,60 @@ components→NavBar
 - 子组件判断index===curIdx，使用点击事件传递点击的index
 - 父组件使用点击事件传递的index更新curIdx
 
+
+
+# 7、滚动导航自定义指令
+
+directives→navCurrent
+
+> 封装，复用
+
+1、编写自定义指令
+
+```JS
+export default {
+    //初始状态
+    mounted(el, binding) {
+        // console.log(el, binding)
+        const { className, activeClass, curIdx } = binding.value,
+            oNavItems = el.getElementsByClassName(className);
+		//点击时，增加类名
+        oNavItems[curIdx].className += ` ${activeClass}`;
+    },
+    //更新
+    updated(el, binding) {
+        const { className, activeClass, curIdx } = binding.value,
+            oOptions = binding.oldValue,
+            oNavItems = el.getElementsByClassName(className);
+		//点击时将之前增加的类名删除掉
+        oNavItems[curIdx].className += ` ${activeClass}`;
+        //点击时，增加类名
+        oNavItems[oOptions.curIdx].className = className;
+
+    }
+}
+```
+
+2、子组件中，使用data-XXX
+
+```html
+<div class='nav-item' :data-index="index">{{item}}</div>
+```
+
+3、父组件
+
+- 父节点使用自定义指令
+
+- 将index通过props传输给子组件
+
+```htaccess
+<div class="nav-bar" v-nav-current="{
+    className:'nav-item',
+    activeClass:'nav-current',
+    curIdx,
+  }"
+@click="navClick($event)">
+```
+
+
+
