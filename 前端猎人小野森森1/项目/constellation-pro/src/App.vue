@@ -17,7 +17,8 @@ import Tab from '@/components/tab'
 import NavBar from '@/components/NavBar/index.vue'
 import {useStore} from 'vuex';
 import {watch} from 'vue';
-import {useRouter} from 'vue-router'
+import {useRouter} from 'vue-router';
+import {ref} from 'vue';
 
 export default{
     name:'App',

@@ -113,7 +113,9 @@ yarn add -S axios qs
 
 
 
-# 4、路由切换
+# 4、底部菜单栏（路由切换）
+
+components→tab
 
 > 实现效果：点击底部菜单栏，跳转不同的页面，点击时样式发生改变
 
@@ -150,4 +152,28 @@ router-link被点击时会新增.router-link-active的class，用于编写点击
     </keep-alive>
 </router-view>
 ```
+
+
+
+# 6、滚动导航视图
+
+components→NavBar
+
+> 实现效果：顶部菜单可横向滑动，点击时样式发生改变
+
+⭕横向滚动的实现
+
+⭕`:class`多个属性
+
+```html
+:class="['nav-item',{'nav-cur':index === curIdx}
+```
+
+- 多个属性用[]
+- {}表达式为true，则增加该class
+
+⭕动态更新点击项
+
+- 子组件判断index===curIdx，使用点击事件传递点击的index
+- 父组件使用点击事件传递的index更新curIdx
 
