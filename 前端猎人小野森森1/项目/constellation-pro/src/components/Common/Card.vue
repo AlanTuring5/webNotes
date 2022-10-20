@@ -33,7 +33,7 @@ export default {
             width: 100%;
             height: 40vh;
             border-radius: 1rem;
-            box-shadow: .4rem .3rem .6rem #333;
+            // box-shadow: .4rem .3rem .6rem #333;
         }
         .mask{
             display: flex;

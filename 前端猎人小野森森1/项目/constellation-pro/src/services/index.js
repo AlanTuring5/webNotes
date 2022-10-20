@@ -10,4 +10,6 @@ export default async (store) => {
         return;
     }
 
+    store.commit('setData', data);
+    console.log(store.state)
 }
