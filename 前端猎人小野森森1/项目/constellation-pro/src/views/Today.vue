@@ -17,7 +17,6 @@ export default {
         onMounted(()=>{
             getData(store);
         })
-        console.log('data',state.today)
         return{
             todayData:computed(()=> state.today)
         }
