@@ -53,7 +53,7 @@ export default {
             }
             p{
                 color:#fff;
-                font-size: .2rem;
+                font-size: 1rem;
                 margin-top: .35rem;
             }
         }

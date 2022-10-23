@@ -244,3 +244,29 @@ export default{
 
 
 
+# 8、注册全局组件
+
+> 将Card组件注册为全局组件，不需要在页面使用components引入即可全局使用
+
+Component/Common/index.js
+
+```JS
+import ConsCard from './Card.vue'
+
+let MyPlugin = {};
+
+MyPlugin.install = function (Vue) {
+    Vue.component(ConsCard.name, ConsCard);
+}
+
+export default MyPlugin;
+```
+
+main.js
+
+```JS
+……
+import MyPlugin from '@/components/Common'
+createApp(App).use(store).use(router).use(MyPlugin).mount('#app')
+```
+
